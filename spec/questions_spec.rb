@@ -101,17 +101,17 @@ describe 'the Friday test :)' do
     expect(n).to eq [1, 2, 3, 1, 2, 3]
   end
 
-  xit 'turn_symbol_into_string' do
+  it 'turn_symbol_into_string' do
     n = turn_symbol_into_string :foobar
     expect(n).to eq 'foobar'
   end
 
-  xit 'average_of_array' do
+  it 'average_of_array' do
     n = average_of_array [10, 15, 25]
     expect(n).to eq 17
   end
 
-  xit 'get_elements_until_greater_than_five' do
+  it 'get_elements_until_greater_than_five' do
     n = get_elements_until_greater_than_five [1, 3, 5, 4, 1, 2, 6, 2, 1, 3, 7]
     expect(n).to eq [1, 3, 5, 4, 1, 2]
   end
