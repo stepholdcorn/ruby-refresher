@@ -1,12 +1,12 @@
 # keep only the elements that start with an a
 def select_elements_starting_with_a(array)
-  array.select {|element| element[0] == 'a'}
+  array.select { |element| element[0] == 'a' }
 end
 
 # keep only the elements that start with a vowel
 def select_elements_starting_with_vowel(array)
   vowels = ['a', 'e', 'i', 'o', 'u']
-  array.select {|element| vowels.include? element[0]}
+  array.select { |element| vowels.include? element[0] }
 end
 
 # remove instances of nil (but NOT false) from an array
@@ -25,7 +25,7 @@ end
 # don't reverse the array, but reverse every word inside it. e.g.
 # ['dog', 'monkey'] becomes ['god', 'yeknom']
 def reverse_every_element_in_array(array)
-  array.map {|element| element.reverse}
+  array.map { |element| element.reverse }
 end
 
 # given an array of student names, like ['Bob', 'Dave', 'Clive']
@@ -38,10 +38,13 @@ end
 # discard the first 3 elements of an array,
 # e.g. [1, 2, 3, 4, 5, 6] becomes [4, 5, 6]
 def all_elements_except_first_3(array)
+  3.times { array.shift }
+  array
 end
 
 # add an element to the beginning of an array
 def add_element_to_beginning_of_array(array, element)
+  array.unshift(element)
 end
 
 # sort an array of words by their last letter, e.g.
