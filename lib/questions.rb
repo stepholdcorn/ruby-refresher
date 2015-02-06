@@ -76,7 +76,7 @@ end
 def separate_array_into_even_and_odd_numbers(array)
   evens = array.select { |element| element % 2 == 0}
   odds = array.select { |element| element % 2 != 0}
-  array = [evens, odds]
+  [evens, odds]
 end
 
 # count the numbers of elements in an element which are palindromes
@@ -107,7 +107,7 @@ end
 # turn an array into itself repeated twice. So [1, 2, 3]
 # becomes [1, 2, 3, 1, 2, 3]
 def double_array(array)
-  array = array + array
+  array + array
 end
 
 # convert a symbol into a string
@@ -134,6 +134,7 @@ end
 # pairing up elements. e.g. ['a', 'b', 'c', 'd'] becomes
 # {'a' => 'b', 'c' => 'd'}
 def convert_array_to_a_hash(array)
+  Hash[*array.flatten]
 end
 
 # get all the letters used in an array of words and return
@@ -141,12 +142,14 @@ end
 # . e.g. the array ['cat', 'dog', 'fish'] becomes
 # ['a', 'c', 'd', 'f', 'g', 'h', 'i', 'o', 's', 't']
 def get_all_letters_in_array_of_words(array)
+  array.join('').split('').uniq.sort
 end
 
 # swap the keys and values in a hash. e.g.
 # {'a' => 'b', 'c' => 'd'} becomes
 # {'b' => 'a', 'd' => 'c'}
 def swap_keys_and_values_in_a_hash(hash)
+  hash.invert
 end
 
 # in a hash where the keys and values are all numbers
