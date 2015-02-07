@@ -196,6 +196,10 @@ end
 # 'the lion the witch and the wardrobe' becomes
 # 'The Lion the Witch and the Wardrobe'
 def titleize_a_string(string)
+  words = string.split(/\W+/)
+  capitalized_words = words.map {|word| word.length > 3 ? word.capitalize : word.downcase }
+  string = capitalized_words.join(' ')
+  capitalized_string = string.slice(0,1).capitalize + string.slice(1..-1)
 end
 
 # return true if a string contains any special characters
@@ -207,6 +211,7 @@ end
 # get the upper limit of a range. e.g. for the range 1..20, you
 # should return 20
 def get_upper_limit_of(range)
+  range.max
 end
 
 # should return true for a 3 dot range like 1...20, false for a
