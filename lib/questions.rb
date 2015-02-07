@@ -244,6 +244,8 @@ end
 # the list of bank holidays is here:
 # https://www.gov.uk/bank-holidays
 def is_a_2014_bank_holiday?(date)
+  bank_holidays = ['01/01', '18/04', '21/04', '05/05', '26/05', '25/08', '25/12', '26/12']
+  bank_holidays.include? date.strftime('%d/%m')
 end
 
 # given your birthday this year, this method tells you
@@ -251,6 +253,10 @@ end
 # e.g. january 1st, will next be a friday in 2016
 # return the day as a capitalized string like 'Friday'
 def your_birthday_is_on_a_friday_in_the_year(birthday)
+  until birthday.strftime('%A') == 'Friday'
+    birthday = birthday + 3.15569e7
+  end
+  birthday.strftime('%Y').to_i
 end
 
 # in a file, total the number of times words of different lengths
