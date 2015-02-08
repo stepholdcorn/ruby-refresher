@@ -279,6 +279,18 @@ end
 # go from 1 to 100
 # (there's no RSpec test for this one)
 def fizzbuzz_without_modulo
+  i = 1.0
+  until i == 101.0
+    print 'FizzBuzz ' if divisible_by(i, 15)
+    print 'Fizz ' if divisible_by(i, 3)
+    print 'Buzz ' if divisible_by(i, 5)
+    print "#{i.to_i} " if !divisible_by(i, 3) && !divisible_by(i, 5)
+    i += 1.0
+  end
+end
+
+def divisible_by(i, n)
+  (i / n) - (i / n).floor == 0
 end
 
 # print the lyrics of the song 99 bottles of beer on the wall
