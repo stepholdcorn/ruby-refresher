@@ -281,12 +281,16 @@ end
 def fizzbuzz_without_modulo
   i = 1.0
   until i == 101.0
-    print 'FizzBuzz ' if divisible_by(i, 15)
-    print 'Fizz ' if divisible_by(i, 3)
-    print 'Buzz ' if divisible_by(i, 5)
-    print "#{i.to_i} " if !divisible_by(i, 3) && !divisible_by(i, 5)
+    printouts(i)
     i += 1.0
   end
+end
+
+def printouts(i)
+  print 'FizzBuzz ' if divisible_by(i, 15)
+  print 'Fizz ' if divisible_by(i, 3)
+  print 'Buzz ' if divisible_by(i, 5)
+  print "#{i.to_i} " if !divisible_by(i, 3) && !divisible_by(i, 5)
 end
 
 def divisible_by(i, n)
@@ -300,4 +304,42 @@ end
 # at the end.
 # (there's no RSpec test for this one)
 def ninety_nine_bottles_of_beer
+  i = 99
+  until i == 0
+    more_than_two(i) if i > 2
+    two_bottles(i) if i == 2
+    one_bottle(i) if i == 1
+    i -= 1
+  end
 end
+
+def more_than_two(i)
+  puts "#{i} bottles of beer on the wall, #{i} bottles of beer."
+  puts "Take one down and pass it around, #{i-1} bottles of beer on the wall."
+end
+
+def two_bottles(i)
+  puts "#{i} bottles of beer on the wall, #{i} bottles of beer."
+  puts "Take one down and pass it around, #{i-1} bottle of beer on the wall."
+end
+
+def one_bottle(i)
+  puts "#{i} bottle of beer on the wall, #{i} bottle of beer."
+  puts "Take one down and pass it around, no more bottles of beer on the wall."
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
